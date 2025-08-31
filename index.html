@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio JS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #luz {
+      width: 150px;
+      height: 150px;
+      margin: auto;
+      border-radius: 50%;
+      background-color: red; /* empieza en rojo */
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+    #estado {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: cadetblue;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: teal;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="luz"></div>
+  <p id="estado">Alto</p>
+  <button id="siguiente">Siguiente</button>
+
+  <script>
+    // Estados del semáforo
+    const colores = ["red", "yellow", "green"];
+    const mensajes = ["Alto", "Precaución", "Avanza"];
+
+    let indice = 0; // empieza en rojo
+
+    const luz = document.getElementById("luz");
+    const estado = document.getElementById("estado");
+    const boton = document.getElementById("siguiente");
+
+    boton.addEventListener("click", () => {
+      // avanzar al siguiente color
+      indice = (indice + 1) % colores.length;
+
+      // aplicar cambios
+      luz.style.backgroundColor = colores[indice];
+      estado.textContent = mensajes[indice];
+    });
+  </script>
+
+</body>
+</html>
