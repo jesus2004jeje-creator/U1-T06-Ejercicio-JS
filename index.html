@@ -14,7 +14,7 @@
       height: 150px;
       margin: auto;
       border-radius: 50%;
-      background-color: red; /* empieza en rojo */
+      background-color: red; 
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
     #estado {
@@ -45,25 +45,25 @@
   <button id="siguiente">Siguiente</button>
 
   <script>
-    // Estados del semáforo
     const colores = ["red", "yellow", "green"];
     const mensajes = ["Alto", "Precaución", "Avanza"];
 
-    let indice = 0; // empieza en rojo
+    let indice = 0; 
 
     const luz = document.getElementById("luz");
     const estado = document.getElementById("estado");
     const boton = document.getElementById("siguiente");
 
     boton.addEventListener("click", () => {
-      // avanzar al siguiente color
+      
       indice = (indice + 1) % colores.length;
 
-      // aplicar cambios
+      
       luz.style.backgroundColor = colores[indice];
       estado.textContent = mensajes[indice];
     });
   </script>
 
 </body>
+
 </html>
